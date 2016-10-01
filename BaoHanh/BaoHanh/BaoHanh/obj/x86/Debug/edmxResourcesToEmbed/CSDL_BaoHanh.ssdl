@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaoHanhModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BaoHanhModelStoreContainer">
+    <EntitySet Name="HangSP" EntityType="BaoHanhModel.Store.HangSP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KhachHang" EntityType="BaoHanhModel.Store.KhachHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SanPham" EntityType="BaoHanhModel.Store.SanPham" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaiKhoan" EntityType="BaoHanhModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThongTinBaoHanh" EntityType="BaoHanhModel.Store.ThongTinBaoHanh" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="XuLyDonHang" EntityType="BaoHanhModel.Store.XuLyDonHang" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_SanPham_HangSP" Association="BaoHanhModel.Store.FK_SanPham_HangSP">
+      <End Role="HangSP" EntitySet="HangSP" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinBaoHanh_KhachHang" Association="BaoHanhModel.Store.FK_ThongTinBaoHanh_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinBaoHanh_SanPham" Association="BaoHanhModel.Store.FK_ThongTinBaoHanh_SanPham">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuLyDonHang_TaiKhoan" Association="BaoHanhModel.Store.FK_XuLyDonHang_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="XuLyDonHang" EntitySet="XuLyDonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuLyDonHang_ThongTinBaoHanh" Association="BaoHanhModel.Store.FK_XuLyDonHang_ThongTinBaoHanh">
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanh" />
+      <End Role="XuLyDonHang" EntitySet="XuLyDonHang" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HangSP">
+    <Key>
+      <PropertyRef Name="mahangsp" />
+    </Key>
+    <Property Name="mahangsp" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="tenhangsp" Type="nvarchar(max)" />
+    <Property Name="kythuat" Type="nvarchar(max)" />
+    <Property Name="sdt" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="tenkh" Type="nvarchar(max)" />
+    <Property Name="sdt" Type="nvarchar(max)" />
+    <Property Name="diachi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="mahang" />
+    </Key>
+    <Property Name="mahang" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="tenhang" Type="nvarchar(max)" />
+    <Property Name="seri" Type="nvarchar(max)" />
+    <Property Name="mahangsp" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="hoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ThongTinBaoHanh">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ngaynhanhang" Type="date" />
+    <Property Name="ngaytrahang" Type="date" />
+    <Property Name="makh" Type="nvarchar" MaxLength="50" />
+    <Property Name="nhanvienKD" Type="nvarchar(max)" />
+    <Property Name="mahang" Type="nvarchar" MaxLength="50" />
+    <Property Name="slnhan" Type="int" />
+    <Property Name="sltrakhach" Type="int" />
+    <Property Name="tinhtranghangnhan" Type="nvarchar(max)" />
+    <Property Name="trangthaibaohanh" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="XuLyDonHang">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ngayhethan" Type="date" />
+    <Property Name="ghichu1" Type="nvarchar(max)" />
+    <Property Name="ghichu2" Type="nvarchar(max)" />
+    <Property Name="Ghichu3" Type="nvarchar(max)" />
+    <Property Name="ketqua" Type="nvarchar(max)" />
+    <Property Name="trangthaixuly" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_SanPham_HangSP">
+    <End Role="HangSP" Type="BaoHanhModel.Store.HangSP" Multiplicity="0..1" />
+    <End Role="SanPham" Type="BaoHanhModel.Store.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangSP">
+        <PropertyRef Name="mahangsp" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="mahangsp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinBaoHanh_KhachHang">
+    <End Role="KhachHang" Type="BaoHanhModel.Store.KhachHang" Multiplicity="0..1" />
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.Store.ThongTinBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="ThongTinBaoHanh">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinBaoHanh_SanPham">
+    <End Role="SanPham" Type="BaoHanhModel.Store.SanPham" Multiplicity="0..1" />
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.Store.ThongTinBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="mahang" />
+      </Principal>
+      <Dependent Role="ThongTinBaoHanh">
+        <PropertyRef Name="mahang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuLyDonHang_TaiKhoan">
+    <End Role="TaiKhoan" Type="BaoHanhModel.Store.TaiKhoan" Multiplicity="0..1" />
+    <End Role="XuLyDonHang" Type="BaoHanhModel.Store.XuLyDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="XuLyDonHang">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuLyDonHang_ThongTinBaoHanh">
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.Store.ThongTinBaoHanh" Multiplicity="1" />
+    <End Role="XuLyDonHang" Type="BaoHanhModel.Store.XuLyDonHang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinBaoHanh">
+        <PropertyRef Name="madonhang" />
+      </Principal>
+      <Dependent Role="XuLyDonHang">
+        <PropertyRef Name="madonhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

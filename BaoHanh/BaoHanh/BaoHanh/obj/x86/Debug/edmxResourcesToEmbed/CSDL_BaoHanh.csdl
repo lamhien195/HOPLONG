@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaoHanhModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BaoHanhEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HangSPs" EntityType="BaoHanhModel.HangSP" />
+    <EntitySet Name="KhachHangs" EntityType="BaoHanhModel.KhachHang" />
+    <EntitySet Name="SanPhams" EntityType="BaoHanhModel.SanPham" />
+    <EntitySet Name="TaiKhoans" EntityType="BaoHanhModel.TaiKhoan" />
+    <EntitySet Name="ThongTinBaoHanhs" EntityType="BaoHanhModel.ThongTinBaoHanh" />
+    <EntitySet Name="XuLyDonHangs" EntityType="BaoHanhModel.XuLyDonHang" />
+    <AssociationSet Name="FK_SanPham_HangSP" Association="BaoHanhModel.FK_SanPham_HangSP">
+      <End Role="HangSP" EntitySet="HangSPs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinBaoHanh_KhachHang" Association="BaoHanhModel.FK_ThongTinBaoHanh_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongTinBaoHanh_SanPham" Association="BaoHanhModel.FK_ThongTinBaoHanh_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuLyDonHang_TaiKhoan" Association="BaoHanhModel.FK_XuLyDonHang_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="XuLyDonHang" EntitySet="XuLyDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuLyDonHang_ThongTinBaoHanh" Association="BaoHanhModel.FK_XuLyDonHang_ThongTinBaoHanh">
+      <End Role="ThongTinBaoHanh" EntitySet="ThongTinBaoHanhs" />
+      <End Role="XuLyDonHang" EntitySet="XuLyDonHangs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HangSP">
+    <Key>
+      <PropertyRef Name="mahangsp" />
+    </Key>
+    <Property Name="mahangsp" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="tenhangsp" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="kythuat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="sdt" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPhams" Relationship="BaoHanhModel.FK_SanPham_HangSP" FromRole="HangSP" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="tenkh" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="sdt" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="diachi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ThongTinBaoHanhs" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_KhachHang" FromRole="KhachHang" ToRole="ThongTinBaoHanh" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="mahang" />
+    </Key>
+    <Property Name="mahang" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="tenhang" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="seri" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mahangsp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="HangSP" Relationship="BaoHanhModel.FK_SanPham_HangSP" FromRole="SanPham" ToRole="HangSP" />
+    <NavigationProperty Name="ThongTinBaoHanhs" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_SanPham" FromRole="SanPham" ToRole="ThongTinBaoHanh" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="hoten" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="sdt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="XuLyDonHangs" Relationship="BaoHanhModel.FK_XuLyDonHang_TaiKhoan" FromRole="TaiKhoan" ToRole="XuLyDonHang" />
+  </EntityType>
+  <EntityType Name="ThongTinBaoHanh">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ngaynhanhang" Type="DateTime" />
+    <Property Name="ngaytrahang" Type="DateTime" />
+    <Property Name="makh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nhanvienKD" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mahang" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="slnhan" Type="Int32" />
+    <Property Name="sltrakhach" Type="Int32" />
+    <Property Name="tinhtranghangnhan" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="trangthaibaohanh" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="KhachHang" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_KhachHang" FromRole="ThongTinBaoHanh" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_SanPham" FromRole="ThongTinBaoHanh" ToRole="SanPham" />
+    <NavigationProperty Name="XuLyDonHang" Relationship="BaoHanhModel.FK_XuLyDonHang_ThongTinBaoHanh" FromRole="ThongTinBaoHanh" ToRole="XuLyDonHang" />
+  </EntityType>
+  <EntityType Name="XuLyDonHang">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ngayhethan" Type="DateTime" />
+    <Property Name="ghichu1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ghichu2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ghichu3" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ketqua" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="trangthaixuly" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TaiKhoan" Relationship="BaoHanhModel.FK_XuLyDonHang_TaiKhoan" FromRole="XuLyDonHang" ToRole="TaiKhoan" />
+    <NavigationProperty Name="ThongTinBaoHanh" Relationship="BaoHanhModel.FK_XuLyDonHang_ThongTinBaoHanh" FromRole="XuLyDonHang" ToRole="ThongTinBaoHanh" />
+  </EntityType>
+  <Association Name="FK_SanPham_HangSP">
+    <End Role="HangSP" Type="BaoHanhModel.HangSP" Multiplicity="0..1" />
+    <End Role="SanPham" Type="BaoHanhModel.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangSP">
+        <PropertyRef Name="mahangsp" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="mahangsp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinBaoHanh_KhachHang">
+    <End Role="KhachHang" Type="BaoHanhModel.KhachHang" Multiplicity="0..1" />
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.ThongTinBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="ThongTinBaoHanh">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongTinBaoHanh_SanPham">
+    <End Role="SanPham" Type="BaoHanhModel.SanPham" Multiplicity="0..1" />
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.ThongTinBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="mahang" />
+      </Principal>
+      <Dependent Role="ThongTinBaoHanh">
+        <PropertyRef Name="mahang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuLyDonHang_TaiKhoan">
+    <End Role="TaiKhoan" Type="BaoHanhModel.TaiKhoan" Multiplicity="0..1" />
+    <End Role="XuLyDonHang" Type="BaoHanhModel.XuLyDonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="XuLyDonHang">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuLyDonHang_ThongTinBaoHanh">
+    <End Role="ThongTinBaoHanh" Type="BaoHanhModel.ThongTinBaoHanh" Multiplicity="1" />
+    <End Role="XuLyDonHang" Type="BaoHanhModel.XuLyDonHang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinBaoHanh">
+        <PropertyRef Name="madonhang" />
+      </Principal>
+      <Dependent Role="XuLyDonHang">
+        <PropertyRef Name="madonhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

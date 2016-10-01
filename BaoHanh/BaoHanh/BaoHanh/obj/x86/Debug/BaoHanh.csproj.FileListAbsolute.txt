@@ -1,0 +1,13 @@
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.Main.resources
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.Properties.Resources.resources
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.TaiKhoan_DangNhap.resources
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\bin\Debug\BaoHanh.exe.config
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\bin\Debug\BaoHanh.exe
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\bin\Debug\BaoHanh.pdb
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.exe
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.pdb
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.DanhSach_XuLyBH.resources
+D:\HOPLONGTECH\PHANMEM\HOPLONG\BaoHanh\BaoHanh\BaoHanh\obj\x86\Debug\BaoHanh.DanhSachSanPham.resources
