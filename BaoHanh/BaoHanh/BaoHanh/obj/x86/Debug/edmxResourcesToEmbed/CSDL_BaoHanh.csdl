@@ -86,6 +86,7 @@
     <NavigationProperty Name="KhachHang" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_KhachHang" FromRole="ThongTinBaoHanh" ToRole="KhachHang" />
     <NavigationProperty Name="SanPham" Relationship="BaoHanhModel.FK_ThongTinBaoHanh_SanPham" FromRole="ThongTinBaoHanh" ToRole="SanPham" />
     <NavigationProperty Name="XuLyDonHang" Relationship="BaoHanhModel.FK_XuLyDonHang_ThongTinBaoHanh" FromRole="ThongTinBaoHanh" ToRole="XuLyDonHang" />
+    <Property Type="String" Name="trangthaixuly" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="XuLyDonHang">
     <Key>

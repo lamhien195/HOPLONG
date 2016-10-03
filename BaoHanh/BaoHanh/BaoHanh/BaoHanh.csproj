@@ -54,17 +54,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CSDL_BaoHanh.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuaTrinhXuLy\DanhSach_XuLyBH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuaTrinhXuLy\DanhSach_XuLyBH.Designer.cs">
       <DependentUpon>DanhSach_XuLyBH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuaTrinhXuLy\Sua_XuLyBH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuaTrinhXuLy\Sua_XuLyBH.Designer.cs">
-      <DependentUpon>Sua_XuLyBH.cs</DependentUpon>
     </Compile>
     <Compile Include="QuaTrinhXuLy\Them_XuLyBH.cs">
       <SubType>Form</SubType>
@@ -104,35 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SanPham\Sua_SanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SanPham\Sua_SanPham.Designer.cs">
-      <DependentUpon>Sua_SanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhachHang\Sua_KhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhachHang\Sua_KhachHang.Designer.cs">
-      <DependentUpon>Sua_KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HangSP\Sua_HangSP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HangSP\Sua_HangSP.Designer.cs">
-      <DependentUpon>Sua_HangSP.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongTinBaoHanh\Sua_TTBH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThongTinBaoHanh\Sua_TTBH.Designer.cs">
       <DependentUpon>Sua_TTBH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoan\Sua_TaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaiKhoan\Sua_TaiKhoan.Designer.cs">
-      <DependentUpon>Sua_TaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan\TaiKhoan_DangNhap.cs">
       <SubType>Form</SubType>
@@ -140,36 +116,21 @@
     <Compile Include="TaiKhoan\TaiKhoan_DangNhap.Designer.cs">
       <DependentUpon>TaiKhoan_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaiKhoan\Them_TaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaiKhoan\Them_TaiKhoan.Designer.cs">
-      <DependentUpon>Them_TaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SanPham\Them_SanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SanPham\Them_SanPham.Designer.cs">
-      <DependentUpon>Them_SanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KhachHang\Them_KhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhachHang\Them_KhachHang.Designer.cs">
-      <DependentUpon>Them_KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HangSP\Them_HangSP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HangSP\Them_HangSP.Designer.cs">
-      <DependentUpon>Them_HangSP.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongTinBaoHanh\Them_TTBH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThongTinBaoHanh\Them_TTBH.Designer.cs">
       <DependentUpon>Them_TTBH.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HangSP\DanhSachHangSanPham.resx">
+      <DependentUpon>DanhSachHangSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\DanhSachKhachHang.resx">
+      <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuaTrinhXuLy\DanhSach_XuLyBH.resx">
       <DependentUpon>DanhSach_XuLyBH.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,17 +146,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuaTrinhXuLy\Them_XuLyBH.resx">
+      <DependentUpon>Them_XuLyBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SanPham\DanhSachSanPham.resx">
       <DependentUpon>DanhSachSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan\TaiKhoan_DangNhap.resx">
       <DependentUpon>TaiKhoan_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinBaoHanh\DanhSachTTBH.resx">
+      <DependentUpon>DanhSachTTBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinBaoHanh\Sua_TTBH.resx">
+      <DependentUpon>Sua_TTBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinBaoHanh\Them_TTBH.resx">
+      <DependentUpon>Them_TTBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="CSDL_BaoHanh.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CSDL_BaoHanh.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Properties\DataSources\BaoHanhEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

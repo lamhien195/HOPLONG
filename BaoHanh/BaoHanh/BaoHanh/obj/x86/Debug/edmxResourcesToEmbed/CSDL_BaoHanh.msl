@@ -44,6 +44,7 @@
     <EntitySetMapping Name="ThongTinBaoHanhs">
       <EntityTypeMapping TypeName="BaoHanhModel.ThongTinBaoHanh">
         <MappingFragment StoreEntitySet="ThongTinBaoHanh">
+          <ScalarProperty Name="trangthaixuly" ColumnName="trangthaixuly" />
           <ScalarProperty Name="madonhang" ColumnName="madonhang" />
           <ScalarProperty Name="ngaynhanhang" ColumnName="ngaynhanhang" />
           <ScalarProperty Name="ngaytrahang" ColumnName="ngaytrahang" />

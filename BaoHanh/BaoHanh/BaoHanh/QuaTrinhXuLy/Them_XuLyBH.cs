@@ -11,9 +11,20 @@ namespace BaoHanh
 {
     public partial class Them_XuLyBH : Form
     {
+        string madh;
         public Them_XuLyBH()
         {
             InitializeComponent();
+        }
+        public Them_XuLyBH(string mdh)
+        {
+            InitializeComponent();
+            madh = mdh;
+        }
+
+        private void Them_XuLyBH_Load(object sender, EventArgs e)
+        {
+            madonhang.Text = madh;
         }
     }
 }

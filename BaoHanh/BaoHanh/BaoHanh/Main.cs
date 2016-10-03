@@ -44,9 +44,7 @@ namespace BaoHanh
 
         private void thêmSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Them_SanPham opf = new Them_SanPham();
-            opf.MdiParent = this;
-            opf.Show();
+            
         }
 
         private void danhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,9 +56,7 @@ namespace BaoHanh
 
         private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Them_KhachHang opf = new Them_KhachHang();
-            opf.MdiParent = this;
-            opf.Show();
+            
         }
 
         private void danhSáchHãngSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,9 +68,7 @@ namespace BaoHanh
 
         private void thêmHãngSảnPhẩmMớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Them_HangSP opf = new Them_HangSP();
-            opf.MdiParent = this;
-            opf.Show();
+           
         }
 
         private void thêmĐơnHàngBảoHànhToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,9 +101,14 @@ namespace BaoHanh
 
         private void thêmTàiKhoảnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Them_TaiKhoan taikhoan = new Them_TaiKhoan();
-            taikhoan.MdiParent = this;
-            taikhoan.Show();
+            
+        }
+
+        private void danhSáchHãngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachHangSanPham opf = new DanhSachHangSanPham();
+            opf.MdiParent = this;
+            opf.Show();
         }
     }
 }

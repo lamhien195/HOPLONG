@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -171,6 +172,7 @@ namespace BaoHanh
         private ObjectSet<XuLyDonHang> _XuLyDonHangs;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -222,11 +224,11 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -251,6 +253,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -353,6 +356,7 @@ namespace BaoHanh
         partial void OnsdtChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -379,6 +383,7 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -403,6 +408,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -505,6 +511,7 @@ namespace BaoHanh
         partial void OndiachiChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -531,6 +538,7 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -555,6 +563,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -657,6 +666,7 @@ namespace BaoHanh
         partial void OnmahangspChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -721,6 +731,7 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -745,6 +756,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -847,6 +859,7 @@ namespace BaoHanh
         partial void OnsdtChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -873,6 +886,7 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -897,6 +911,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1141,8 +1156,33 @@ namespace BaoHanh
         private global::System.String _trangthaibaohanh;
         partial void OntrangthaibaohanhChanging(global::System.String value);
         partial void OntrangthaibaohanhChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String trangthaixuly
+        {
+            get
+            {
+                return _trangthaixuly;
+            }
+            set
+            {
+                OntrangthaixulyChanging(value);
+                ReportPropertyChanging("trangthaixuly");
+                _trangthaixuly = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("trangthaixuly");
+                OntrangthaixulyChanged();
+            }
+        }
+        private global::System.String _trangthaixuly;
+        partial void OntrangthaixulyChanging(global::System.String value);
+        partial void OntrangthaixulyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1261,6 +1301,7 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1285,6 +1326,7 @@ namespace BaoHanh
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1483,6 +1525,7 @@ namespace BaoHanh
         partial void OnusernameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1563,8 +1606,10 @@ namespace BaoHanh
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

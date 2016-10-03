@@ -78,6 +78,7 @@
     <Property Name="sltrakhach" Type="int" />
     <Property Name="tinhtranghangnhan" Type="nvarchar(max)" />
     <Property Name="trangthaibaohanh" Type="nvarchar(max)" />
+    <Property Name="trangthaixuly" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="XuLyDonHang">
     <Key>
